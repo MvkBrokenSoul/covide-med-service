@@ -10,6 +10,7 @@ const oxyuserrout = require('./routes/oxyuserrout.js');
 const patentdetailsrout = require('./routes/patentdetailsrout.js');
 const doctorLinkRout = require('./routes/doctorLinkRouter.js');
 const Prescription = require('./routes/prescriptionRout.js');
+const otpsendrout = require('./routes/otpSend.js');
 app.use(express.json());
 app.use(cors({origin:'http://localhost:4200'}));
 
@@ -21,3 +22,4 @@ app.use('/oxyuserdetails', oxyuserrout);
 app.use('/patentdetails', patentdetailsrout);
 app.use('/doctorlink', doctorLinkRout);
 app.use('/prescription', Prescription);
+app.use('/otpsend', otpsendrout)

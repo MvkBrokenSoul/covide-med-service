@@ -33,12 +33,7 @@ router.post('/',async (req, res)=>{
         const doclink = await doctorlink.save();
         res.send(doclink);
 
-    }
-    catch(e){
-        res.send(e);
-    }
-
-    var name = req.body.name;
+        var name = req.body.name;
     var videoLink = req.body.videoLink;
     var date = req.body.date;
     var mailOptions = {
@@ -55,6 +50,12 @@ router.post('/',async (req, res)=>{
             console.log("email has been sent",info.response);
         }
     })
+    }
+    catch(e){
+        res.send(e);
+    }
+
+    
 
 
 });
