@@ -32,6 +32,5 @@ router.get('/:OTP/:Email',(req,res)=>{
             console.log("email has been sent",info.response);
         }
     })
-    res.send("email send")
 })
 module.exports = router;
