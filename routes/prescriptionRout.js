@@ -2,23 +2,23 @@ const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
 const  Prescription = require('../modules/Prescription.js');
-var nodemailer = require('nodemailer');
+var transport = require('../middleware/mail.js')
 
 //Base path: http://localhost:3000/prescription
 
-var transport = nodemailer.createTransport({
-    host:'smtp.gmail.com',
-    port:587,
-    secure:false,
-    requireTLS:true,
-    auth:{
-        user:'covidmedservice@gmail.com',
-        pass:'robin123@'
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+// var transport = nodemailer.createTransport({
+//     host:'smtp.gmail.com',
+//     port:587,
+//     secure:false,
+//     requireTLS:true,
+//     auth:{
+//         user:'covidmedservice@gmail.com',
+//         pass:'robin123@'
+//     },
+//     tls: {
+//         rejectUnauthorized: false
+//     }
+// });
 
 router.post('/', (req, res)=>{
     let prescription = new Prescription({

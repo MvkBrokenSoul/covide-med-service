@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
 const User = require('../modules/user.js');
+var transport = require('../middleware/mail.js')
 //Get, Post, Put, Delete
 //Base path: http://localhost:3000/user
 
@@ -22,6 +23,21 @@ router.post('/', (req, res)=>{
             res.send(doc);
         }
     });
+    var name = req.body.name;
+    var mailOptions = {
+        from: 'covidmedservice@gmail.com',
+        to:req.body.email,
+        subject:"For Prescription Download",
+        text:"dear "+name+"\n"+"You are successfully registered."
+    }
+    transport.sendMail(mailOptions,function(error,info){
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log("email has been sent",info.response);
+        }
+    })
 
 });
 //Get api

@@ -2,22 +2,22 @@ const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
 const  OxyUserDetails = require('../modules/OxyUserDetails.js');
-var nodemailer = require('nodemailer');
+var transport = require('../middleware/mail.js')
 //Base path: http://localhost:3000/oxyuserdetails
 
-var transport = nodemailer.createTransport({
-    host:'smtp.gmail.com',
-    port:587,
-    secure:false,
-    requireTLS:true,
-    auth:{
-        user:'covidmedservice@gmail.com',
-        pass:'robin123@'
-    },
-    tls: {
-        rejectUnauthorized: false
-    }
-});
+// var transport = nodemailer.createTransport({
+//     host:'smtp.gmail.com',
+//     port:587,
+//     secure:false,
+//     requireTLS:true,
+//     auth:{
+//         user:'covidmedservice@gmail.com',
+//         pass:'robin123@'
+//     },
+//     tls: {
+//         rejectUnauthorized: false
+//     }
+// });
 
 router.post('/',(req, res)=>{
     let oxyuserdetails = new OxyUserDetails({
@@ -40,20 +40,20 @@ router.post('/',(req, res)=>{
         }
     });
 
-    var mailOptions = {
-        from: 'covidmedservice@gmail.com',
-        to:req.body.email,
-        subject:"Oxygen Booking",
-        text:"Dear Sir,"+"\n"+"We get your oxygen order."
-       }
-    transport.sendMail(mailOptions,function(error,info){
-        if(error){
-            console.log(error);
-        }
-        else{
-            console.log("email has been sent",info.response);
-        }
-    })
+    // var mailOptions = {
+    //     from: 'covidmedservice@gmail.com',
+    //     to:req.body.email,
+    //     subject:"Oxygen Booking",
+    //     text:"Dear Sir,"+"\n"+"We get your oxygen order."
+    //    }
+    // transport.sendMail(mailOptions,function(error,info){
+    //     if(error){
+    //         console.log(error);
+    //     }
+    //     else{
+    //         console.log("email has been sent",info.response);
+    //     }
+    // })
 
 
 
