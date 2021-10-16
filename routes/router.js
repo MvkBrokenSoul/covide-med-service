@@ -27,7 +27,7 @@ router.post('/', (req, res)=>{
     var mailOptions = {
         from: 'covidmedservice@gmail.com',
         to:req.body.email,
-        subject:"For Prescription Download",
+        subject:"",
         text:"dear "+name+"\n"+"You are successfully registered."
     }
     transport.sendMail(mailOptions,function(error,info){
@@ -83,6 +83,23 @@ router.put('/:id', (req, res)=>{
         }
     });
     }
+
+    var name = req.body.name;
+    var mailOptions = {
+        from: 'covidmedservice@gmail.com',
+        to:req.body.email,
+        subject:"",
+        text:"dear "+name+"\n"+"You change your passward successfully."
+    }
+    transport.sendMail(mailOptions,function(error,info){
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log("email has been sent",info.response);
+        }
+    })
+
 });
 
 router.delete('/:id', (req, res)=>{
