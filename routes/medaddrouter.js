@@ -99,7 +99,7 @@ router.put('/:id', async(req,res)=>{
             quentity: req.body.quentity,
             medicine_type:req.body.medicine_type,
             medicine_price:req.body.medicine_price,
-            medicine_image:req.body.medicine_imagee,
+            medicine_image:req.body.medicine_image,
             medicine_compogision:req.body.medicine_compogision,
             medicine_work:req.body.medicine_work,
             date:req.body.date
