@@ -45,6 +45,8 @@ router.post('/',(req,res)=>{
             console.log(result)
             const medicineadd = new Medicineadd({
                 medicine_name : req.body.medicine_name,
+                medicine_company: req.body.medicine_company,
+                medicine_power: req.body.medicine_power,
                 quentity: req.body.quentity,
                 medicine_type:req.body.medicine_type,
                 medicine_price:req.body.medicine_price,
@@ -96,6 +98,8 @@ router.put('/:id', async(req,res)=>{
     try{
         let medicineadd={
             medicine_name : req.body.medicine_name,
+            medicine_company: req.body.medicine_company,
+            medicine_power: req.body.medicine_power,
             quentity: req.body.quentity,
             medicine_type:req.body.medicine_type,
             medicine_price:req.body.medicine_price,

@@ -8,6 +8,7 @@ const OxyUserDetails = mongoose.model('OxyUserDetails',{
     andharNo:{type:Number},
     causeforOxy:{type:String},
     CovidAuth:{type:Boolean},
-    date:{type: Date, default: Date.now}
+    date:{type: Date, default: Date.now},
+    deletveryStat:{type:String}
 });
 module.exports = OxyUserDetails;

@@ -12,7 +12,7 @@ const Prescription = require('./routes/prescriptionRout.js');
 const otpsendrout = require('./routes/otpSend.js');
 const medaddrouter = require('./routes/medaddrouter');
 const fileupload = require('express-fileupload')
-
+const cartrouter = require('./routes/cartRout');
 app.use(fileupload({
     useTempFiles:true
 }))
@@ -29,4 +29,5 @@ app.use('/patentdetails', patentdetailsrout);
 app.use('/doctorlink', doctorLinkRout);
 app.use('/prescription', Prescription);
 app.use('/otpsend', otpsendrout);
-app.use('/medadd',medaddrouter)
+app.use('/medadd',medaddrouter);
+app.use('/cart',cartrouter);

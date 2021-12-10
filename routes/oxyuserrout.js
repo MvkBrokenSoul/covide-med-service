@@ -30,6 +30,7 @@ router.post('/',(req, res)=>{
         causeforOxy:req.body.causeforOxy,
         CovidAuth:req.body.CovidAuth,
         date:req.body.date,
+        deletveryStat:req.body.deletveryStat,
     });
     oxyuserdetails.save( (err,doc)=>{
         if (err){
@@ -40,20 +41,20 @@ router.post('/',(req, res)=>{
         }
     });
 
-    // var mailOptions = {
-    //     from: 'covidmedservice@gmail.com',
-    //     to:req.body.email,
-    //     subject:"Oxygen Booking",
-    //     text:"Dear Sir,"+"\n"+"We get your oxygen order."
-    //    }
-    // transport.sendMail(mailOptions,function(error,info){
-    //     if(error){
-    //         console.log(error);
-    //     }
-    //     else{
-    //         console.log("email has been sent",info.response);
-    //     }
-    // })
+    var mailOptions = {
+        from: 'covidmedservice@gmail.com',
+        to:req.body.email,
+        subject:"Oxygen Booking",
+        text:"Dear Sir,"+"\n"+"We get your oxygen order."
+       }
+    transport.sendMail(mailOptions,function(error,info){
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log("email has been sent",info.response);
+        }
+    })
 
 
 
@@ -96,6 +97,7 @@ router.put('/:id',(req, res)=>{
         causeforOxy:req.body.causeforOxy,
         CovidAuth:req.body.CovidAuth,
         date:req.body.date,
+        deletveryStat:req.body.deletveryStat,
     };
     OxyUserDetails.findByIdAndUpdate(req.params.id, {$set :oxyuserdetails}, {new:true}, (err,doc)=>{
         if (err){
