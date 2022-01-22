@@ -2,7 +2,7 @@ const express = require('express');
 const app = express()
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const Cart = require('../modules/cart.js');
+const Cart = require('../models/cart.js');
 
 
 router.post('/',async (req, res)=>{

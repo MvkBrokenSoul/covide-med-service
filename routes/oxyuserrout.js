@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const  OxyUserDetails = require('../modules/OxyUserDetails.js');
+const  OxyUserDetails = require('../models/OxyUserDetails.js');
 var transport = require('../middleware/mail.js')
 //Base path: http://localhost:3000/oxyuserdetails
 

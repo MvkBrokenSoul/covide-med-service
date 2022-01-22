@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const OxygenQuentitity = require('../modules/oxygenquentity.js');
+const OxygenQuentitity = require('../models/oxygenquentity.js');
 //Get, Post, Put, Delete
 //Base path: http://localhost:3000/oxygenquentity
 

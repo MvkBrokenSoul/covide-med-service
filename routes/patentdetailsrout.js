@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const  PatentDetails = require('../modules/patentdetails.js');
+const  PatentDetails = require('../models/patentdetails.js');
 
 //Base path: http://localhost:3000/patentdetails
 

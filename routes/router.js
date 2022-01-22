@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const User = require('../modules/user.js');
+const User = require('../models/user.js');
 var transport = require('../middleware/mail.js')
 //Get, Post, Put, Delete
 //Base path: http://localhost:3000/user

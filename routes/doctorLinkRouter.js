@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const doctorLink = require('../modules/doctorLink.js');
+const doctorLink = require('../models/doctorLink.js');
 var transport = require('../middleware/mail.js')
 //Get, Post, Put, Delete
 //Base path: http://localhost:3000/doctorlink

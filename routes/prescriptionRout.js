@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongoose').Types.ObjectId;
-const  Prescription = require('../modules/Prescription.js');
+const  Prescription = require('../models/Prescription.js');
 var transport = require('../middleware/mail.js')
 
 //Base path: http://localhost:3000/prescription
